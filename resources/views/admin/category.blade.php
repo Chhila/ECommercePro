@@ -26,6 +26,9 @@
             margin-top: 30px;
             border: 3px solid white;
         }
+        td{
+            padding: 5px 0;
+        }
     </style>
 </head>
 

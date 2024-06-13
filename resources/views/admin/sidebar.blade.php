@@ -1,8 +1,8 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
     <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
-      <a class="sidebar-brand brand-logo" href="index.html"><img src="admin/assets/images/logo.svg" alt="logo" /></a>
-      <a class="sidebar-brand brand-logo-mini" href="index.html"><img src="admin/assets/images/logo-mini.svg" alt="logo" /></a>
+      <a class="sidebar-brand brand-logo" href="/redirect"><img src="admin/assets/images/logo.svg" alt="logo" /></a>
+      <a class="sidebar-brand brand-logo-mini" href="/redirect"><img src="admin/assets/images/logo-mini.svg" alt="logo" /></a>
     </div>
     <ul class="nav">
       <li class="nav-item profile">
@@ -58,7 +58,7 @@
         <span class="nav-link">Navigation</span>
       </li>
       <li class="nav-item menu-items">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="/redirect">
           <span class="menu-icon">
             <i class="mdi mdi-speedometer"></i>
           </span>
