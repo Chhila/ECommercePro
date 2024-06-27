@@ -65,8 +65,11 @@
                     @foreach ($data as $data)
                         <tr>
                             <td>{{ $data->category_name }}</td>
-                            <td><a onclick="return confirm('Are you sure about delete this?')" class="btn btn-danger"
-                                    href="{{ url('delete_category', $data->id) }}">Delete</a></td>
+                            <td><form action="{{ url('delete_category', $data->id) }}" method="POST" style="display: inline;">
+                                @csrf
+                                @method('POST')
+                                <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this?')">Delete</button>
+                            </form>
                         </tr>
                     @endforeach
                 </table>

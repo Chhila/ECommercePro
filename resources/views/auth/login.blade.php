@@ -38,7 +38,11 @@
                         {{ __('Forgot your password?') }}
                     </a>
                 @endif
-
+                
+                <button onclick="window.location.href='{{ url('/register') }}'" style="background-color: rgb(22, 202, 22);color:white;margin-left:10px; ;padding:6px 10px; border-radius:5px; font-size:14px; font-weight:bold;">
+                    REGISTER
+                </button>
+                
                 <x-button class="ms-4">
                     {{ __('Log in') }}
                 </x-button>

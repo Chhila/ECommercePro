@@ -103,11 +103,10 @@
                         <td class="td_deg">${{ $cart->price }}</td>
                         <td class="td_deg"><img class="img_deg" src="/product/{{ $cart->image }}" alt=""></td>
                         <td class="td_deg">
-                            <form action="{{ url('remove_cart', $cart->id) }}" method="POST" style="display:inline;">
+                            <form id="remove-form-{{ $cart->id }}" action="{{ url('remove_cart', $cart->id) }}" method="POST" style="display:inline;">
                                 @csrf
                                 @method('POST')
-                                <button type="submit" class="btn btn-danger"
-                                    onclick="confirmation(event)">Remove</button>
+                                <button type="button" class="btn btn-danger" onclick="confirmation(event, {{ $cart->id }})">Remove</button>
                             </form>
                         </td>
                     </tr>
@@ -136,12 +135,10 @@
             </p>
         </div>
         <script>
-            function confirmation(ev) {
+            function confirmation(ev, cartId) {
                 ev.preventDefault();
-                var urlToRedirect = ev.currentTarget.getAttribute('href');
-                console.log(urlToRedirect);
                 swal({
-                        title: "Are you sure to cancel this product",
+                        title: "Are you sure to cancel this product?",
                         text: "You will not be able to revert this!",
                         icon: "warning",
                         buttons: true,
@@ -149,7 +146,7 @@
                     })
                     .then((willCancel) => {
                         if (willCancel) {
-                            window.location.href = urlToRedirect;
+                            document.getElementById('remove-form-' + cartId).submit();
                         }
                     });
             }
