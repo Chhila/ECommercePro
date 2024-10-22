@@ -31,7 +31,7 @@
       <div class="col-sm-6 col-md-4 col-lg-4" style="margin:auto; width:50%; padding:30px;">
         
            <div class="img-box" style="padding: 10px;align-items:center;">
-              <img src="/product/{{ $product->image }}" alt="">
+              <img src="/product/{{ $product->image }}" style="width:500px;" alt="">
            </div>
            <div class="detail-box">
               <h5>
