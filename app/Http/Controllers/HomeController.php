@@ -17,7 +17,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $product = Product::paginate(10);
+        $product = Product::paginate(9);
         $comment = Comment::orderBy('id', 'desc')->get();
         $reply = Reply::all();
         return view('home.userpage', compact('product', 'comment', 'reply'));
@@ -42,7 +42,7 @@ class HomeController extends Controller
 
             return view('admin.home', compact('total_product', 'total_order', 'total_user', 'total_revenue', 'total_delivered', 'total_processing'));
         } else {
-            $product = Product::paginate(10);
+            $product = Product::paginate(9);
             $comment = Comment::orderBy('id', 'desc')->get();
             $reply = Reply::all();
             return view('home.userpage', compact('product', 'comment', 'reply'));
@@ -223,13 +223,13 @@ class HomeController extends Controller
         $search = $request->search;
         $product = Product::where('name', 'LIKE', '%' . $search . '%')
             ->orwhere('category', 'LIKE', '%' . $search . '%')
-            ->paginate(10);
+            ->paginate(9);
         return view('home.userpage', compact('product', 'comment', 'reply'));
     }
 
     public function product()
     {
-        $product = Product::paginate(10);
+        $product = Product::paginate(9);
         $comment = Comment::orderBy('id', 'desc')->get();
         $reply = Reply::all();
         return view('home.all_product', compact('product', 'comment', 'reply'));
@@ -242,7 +242,7 @@ class HomeController extends Controller
         $search = $request->search;
         $product = Product::where('name', 'LIKE', '%' . $search . '%')
             ->orwhere('category', 'LIKE', '%' . $search . '%')
-            ->paginate(10);
+            ->paginate(9);
         return view('home.all_product', compact('product', 'comment', 'reply'));
     }
 }
